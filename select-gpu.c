@@ -8,9 +8,15 @@ void getCommand(char* command, char* option)
     {
         strcpy(command, "system76-power help");
     }
+    else if(strcmp(option, "default") == 0)
+    {
+        strcpy(command, "sudo system76-power graphics");
+    }
     else
     {
         strcpy(command, "sudo system76-power graphics");
+        strcat(command, " ");
+        strcat(command, option);        
     }
 }
 
