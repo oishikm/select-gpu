@@ -14,9 +14,7 @@ void getCommand(char* command, char* option)
     }
     else
     {
-        strcpy(command, "sudo system76-power graphics");
-        strcat(command, " ");
-        strcat(command, option);        
+        sprintf(command, "sudo system76-power graphics %s", option);   
     }
 }
 
