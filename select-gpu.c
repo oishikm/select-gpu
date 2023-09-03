@@ -20,18 +20,19 @@ void getCommand(char* command, char* option)
         )
     {
         printf  ( 
-                    "\nselect-gpu\nWrapper for system76-power on Pop!_OS to select GPU."
-                    "\nUsage: select-gpu <OPTION>"
-                    "\nAvailable Options:\n-h, -help, --help, help"
-                    "\t\t\tDisplays this information"
+                    "\nselect-gpu"
+                    "\n\nWrapper for system76-power on Pop!_OS to select GPU."                    
+                    "\n\nUsage: select-gpu <OPTION>"
+                    "\n\nAvailable Options:\n-h, -help, --help, help"
+                    "\t\tDisplays this information"
                     "\nd, n, nvidia"
-                    "\t\t\t\tSwitch to dedicated NVIDIA GPU"
+                    "\t\t\tSwitch to dedicated NVIDIA GPU"
                     "\ni, integrated"
-                    "\t\t\t\tSwitch to integrated GPU"
+                    "\t\t\tSwitch to integrated GPU"
                     "\nh, hybrid"
-                    "\t\t\t\tSwitch to hybrid GPU mode"
+                    "\t\t\tSwitch to hybrid GPU mode"
                     "\nc, compute"
-                    "\t\t\t\tSwitch to compute mode for dedicated GPU"
+                    "\t\t\tSwitch to compute mode for dedicated GPU"
                     "\n\nFor help on system76-power, run \"system76-power help\""                                                            
                 );
         strcpy(command, " "); /* NOP */
