@@ -47,7 +47,7 @@ int main(int argc, char** argv)
     {
         strcpy(option, "default");
     }
-    getCommand(command, "help");
+    getCommand(command, option);
     printf("%s", command);
     FILE *fp = popen("sudo system76-power graphics", "r");
     fread(current_gpu, sizeof(char), 128, fp);
