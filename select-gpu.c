@@ -4,7 +4,12 @@
 
 void getCommand(char* command, char* option)
 {    
-    if(strcmp(option, "help") == 0)
+    if  ( 
+        strcmp(option, "help") == 0 ||
+        strcmp(option, "-h") == 0 ||
+        strcmp(option, "-help") == 0 ||
+        strcmp(option, "--help") == 0
+        )
     {
         strcpy(command, "system76-power help");
     }
@@ -48,7 +53,7 @@ int main(int argc, char** argv)
         strcpy(option, "default");
     }
     getCommand(command, option);
-    printf("%s", command);
+    system(command);
     FILE *fp = popen("sudo system76-power graphics", "r");
     fread(current_gpu, sizeof(char), 128, fp);
     printf("\nSystem may need to be rebooted. Current gpu is : %s\n", current_gpu);
