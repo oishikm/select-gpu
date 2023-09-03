@@ -5,9 +5,28 @@ Reference: <a href="https://support.system76.com/articles/graphics-switch-pop/#f
   
 Tested on Pop!_OS 22.04 (Ubuntu 22.04 LTS) on Oracle VM VirtualBox.  
   
+## Installation
+- Clone this repository.
+  ```
+  git clone https://github.com/oishikm/select-gpu.git
+  ```
+- Move into the cloned repository.
+  ```
+  cd select-gpu
+  ```
+- Run the Makefile.
+  ```
+  make
+  ```
+
 ## Usage
 
-```select-gpu <OPTION>```
+```select-gpu <OPTION>```  
+  
+(Above line is meant to be run if select-gpu is made available in PATH)  
+If you are running select-gpu from within the repository folder, run the following instead:
+  
+```./select-gpu <OPTION>```  
 
 ### Available Options
   
