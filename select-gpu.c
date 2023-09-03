@@ -24,7 +24,7 @@ void getCommand(char* command, char* option)
                     "\n\nWrapper for system76-power on Pop!_OS to select GPU."                    
                     "\n\nUsage: select-gpu <OPTION>"
                     "\n\nAvailable Options:\n  -h, -help, --help, help"
-                    "\t\tDisplays this information"
+                    "\tDisplays this information"
                     "\n  d, n, nvidia"
                     "\t\t\tSwitch to dedicated NVIDIA GPU"
                     "\n  i, integrated"
@@ -80,7 +80,8 @@ int main(int argc, char** argv)
     system(command);
     FILE *fp = popen("sudo system76-power graphics", "r");
     fread(current_gpu, sizeof(char), 128, fp);
-    printf("\nSystem may need to be rebooted. Current gpu is : %s\n", current_gpu);
+    printf( "\nSystem may need to be rebooted if you just switched/changed GPU."
+            "\nCurrent GPU is : %s\n", current_gpu);
     pclose(fp);
     return 0;
 }
