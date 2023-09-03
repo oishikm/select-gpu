@@ -17,10 +17,12 @@ void getCommand(char* command, char* option)
 int main()
 {
     char command[256];
+    char current_gpu[128];        
     getCommand(command, "help");
     printf("%s", command);
-    printf("\nSystem may need reboot. Current gpu is:");
-    system("sudo system76-power graphics");
-    printf("\n\n");
+    FILE *fp = popen("sudo system76-power graphics", "r");
+    fread(current_gpu, sizeof(char), 128, fp);
+    printf("\nSystem may need to be rebooted. Current gpu is : %s\n", current_gpu);
+    pclose(fp);
     return 0;
 }
