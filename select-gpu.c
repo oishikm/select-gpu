@@ -14,7 +14,7 @@ void getCommand(char* command, char* option)
         printf  ( 
                     "\nselect-gpu\nWrapper for system76-power on Pop!_OS to select GPU."
                     "\nAvailable Options :\n-h, -help, --help, help"
-                    "\t\t\tDisplays this help message"
+                    "\t\t\tDisplays this information"
                     "\nd, n, nvidia"
                     "\t\t\t\tSwitch to dedicated NVIDIA GPU"
                     "\ni, integrated"
