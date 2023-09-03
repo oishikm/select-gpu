@@ -11,6 +11,19 @@ void getCommand(char* command, char* option)
         strcmp(option, "--help") == 0
         )
     {
+        printf  ( 
+                    "\nselect-gpu\nWrapper for system76-power on Pop!_OS to select GPU."
+                    "\nAvailable Options :\n-h, -help, --help, help"
+                    "\t\t\tDisplays this help message"
+                    "\nd, n, nvidia"
+                    "\t\t\t\tSwitch to dedicated NVIDIA GPU"
+                    "\ni, integrated"
+                    "\t\t\t\tSwitch to integrated GPU"
+                    "\nh, hybrid"
+                    "\t\t\t\tSwitch to hybrid GPU mode"
+                    "\nc, compute"
+                    "\t\t\t\tSwitch to compute mode for dedicated GPU"                                                            
+                );
         strcpy(command, "system76-power help");
     }
     else if(strcmp(option, "default") == 0)
@@ -41,9 +54,9 @@ void getCommand(char* command, char* option)
 
 int main(int argc, char** argv)
 {
-    char command[256];
-    char current_gpu[128];
-    char option[128];
+    char command[256] = "?\0";
+    char current_gpu[128] = "?\0";
+    char option[128] = "?\0";
     if(argc > 1)
     {
         strcpy(option, argv[1]);
