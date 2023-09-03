@@ -1,3 +1,11 @@
+/*
+ * select-gpu
+ * Wrapper for system76-power on Pop!_OS to select GPU.
+ * Reference: https://support.system76.com/articles/graphics-switch-pop/#from-the-command-line
+ * 
+ * Oishik M | 03 September 2023
+ */
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -13,7 +21,8 @@ void getCommand(char* command, char* option)
     {
         printf  ( 
                     "\nselect-gpu\nWrapper for system76-power on Pop!_OS to select GPU."
-                    "\nAvailable Options :\n-h, -help, --help, help"
+                    "\nUsage: select-gpu <OPTION>"
+                    "\nAvailable Options:\n-h, -help, --help, help"
                     "\t\t\tDisplays this information"
                     "\nd, n, nvidia"
                     "\t\t\t\tSwitch to dedicated NVIDIA GPU"
@@ -22,9 +31,10 @@ void getCommand(char* command, char* option)
                     "\nh, hybrid"
                     "\t\t\t\tSwitch to hybrid GPU mode"
                     "\nc, compute"
-                    "\t\t\t\tSwitch to compute mode for dedicated GPU"                                                            
+                    "\t\t\t\tSwitch to compute mode for dedicated GPU"
+                    "\n\nFor help on system76-power, run \"system76-power help\""                                                            
                 );
-        strcpy(command, "system76-power help");
+        strcpy(command, " "); /* NOP */
     }
     else if(strcmp(option, "default") == 0)
     {
